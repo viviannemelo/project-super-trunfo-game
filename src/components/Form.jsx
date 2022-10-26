@@ -1,8 +1,11 @@
+/* eslint-disable react/prop-types */
+/* eslint-disable max-len */
 /* eslint-disable jsx-a11y/label-has-associated-control */
 import React, { Component } from 'react';
 
 class Form extends Component {
   render() {
+    // eslint-disable-next-line no-unused-vars
     const { cardName, cardDescription, cardAttr1, cardAttr2, cardAttr3, cardImage, cardRare, cardTrunfo, hasTrunfo, isSaveButtonDisabled, onInputChange, onSaveButtonClick } = this.props;
     return (
       <div>
