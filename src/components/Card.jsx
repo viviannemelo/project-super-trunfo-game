@@ -1,23 +1,11 @@
-/* eslint-disable react/no-unused-state */
-/* eslint-disable react/button-has-type */
-/* eslint-disable react/jsx-no-comment-textnodes */
-/* eslint-disable react/prop-types */
-/* eslint-disable no-unused-vars */
-/* eslint-disable max-len */
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 class Card extends Component {
-  constructor() {
-    super();
-    this.state = {
-      isActiveButton: false,
-    };
-  }
-
   render() {
-    const { cardName, cardDescription, cardAttr1, cardAttr2, cardAttr3, cardImage, cardRare,
+    const { cardName, cardDescription, cardAttr1,
+      cardAttr2, cardAttr3, cardImage, cardRare,
       cardTrunfo } = this.props;
-    const { isActiveButton } = this.state;
 
     return (
       <div>
