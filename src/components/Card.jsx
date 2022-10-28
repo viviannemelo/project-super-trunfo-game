@@ -9,9 +9,9 @@ class Card extends Component {
 
     return (
       <div>
-        <h3 data-testid="name-card" value={ cardName }>Nome da carta</h3>
+        <h3 data-testid="name-card">{ cardName }</h3>
         <img data-testid="image-card" src={ cardImage } alt={ cardName } />
-        <p data-testid="description-card" value={ cardDescription }>Descrição da carta</p>
+        <p data-testid="description-card">{ cardDescription }</p>
         <ul>
           <li data-testid="attr1-card">{ cardAttr1 }</li>
           <li data-testid="attr2-card">{ cardAttr2 }</li>
