@@ -3,15 +3,11 @@ import PropTypes from 'prop-types';
 
 class Form extends Component {
   render() {
-    const {
-      //   hasTrunfo,
-      isSaveButtonDisabled, onSaveButtonClick } = this.props;
-    const {
+    const { isSaveButtonDisabled, onSaveButtonClick,
       onInputChange,
-      state: {
-        cardName, cardImage, cardDescription,
-        cardAttr1, cardAttr2, cardAttr3, cardRare, cardTrunfo,
-      },
+      cardName, cardImage, cardDescription,
+      cardAttr1, cardAttr2, cardAttr3, cardRare, cardTrunfo,
+      // hasTrunfo,
     } = this.props;
 
     return (
@@ -115,7 +111,7 @@ class Form extends Component {
             data-testid="save-button"
             id="save-button"
             type="button"
-            disabled={ !isSaveButtonDisabled }
+            disabled={ isSaveButtonDisabled }
             onClick={ onSaveButtonClick }
           />
         </label>
@@ -125,16 +121,14 @@ class Form extends Component {
 }
 
 Form.propTypes = {
-  state: PropTypes.shape({
-    cardName: PropTypes.string.isRequired,
-    cardDescription: PropTypes.string.isRequired,
-    cardAttr1: PropTypes.string.isRequired,
-    cardAttr2: PropTypes.string.isRequired,
-    cardAttr3: PropTypes.string.isRequired,
-    cardImage: PropTypes.string.isRequired,
-    cardRare: PropTypes.string.isRequired,
-    cardTrunfo: PropTypes.bool.isRequired,
-  }).isRequired,
+  cardName: PropTypes.string.isRequired,
+  cardDescription: PropTypes.string.isRequired,
+  cardAttr1: PropTypes.string.isRequired,
+  cardAttr2: PropTypes.string.isRequired,
+  cardAttr3: PropTypes.string.isRequired,
+  cardImage: PropTypes.string.isRequired,
+  cardRare: PropTypes.string.isRequired,
+  cardTrunfo: PropTypes.bool.isRequired,
   // hasTrunfo: PropTypes.bool.isRequired,
   isSaveButtonDisabled: PropTypes.bool.isRequired,
   onInputChange: PropTypes.func.isRequired,
