@@ -52,7 +52,6 @@ class App extends React.Component {
     }));
   };
 
-  // TESTE 03
   onSaveButtonClick = () => {
     const {
       cardName, cardDescription, cardAttr1, cardAttr2,
@@ -86,59 +85,6 @@ class App extends React.Component {
       onInputChange,
     });
   };
-
-  // TESTE 02
-  // onSaveButtonClick() {
-  //   const { cardName, cardAttr1, cardAttr2,
-  //     cardAttr3, cardImage, cardRare, cardTrunfo,
-  //     hasTrunfo, inputInfos, cardDescription } = this.state;
-  //   const savedCard = {
-  //     cardName,
-  //     cardDescription,
-  //     cardAttr1,
-  //     cardAttr2,
-  //     cardAttr3,
-  //     cardImage,
-  //     cardRare,
-  //     cardTrunfo,
-  //     hasTrunfo,
-  //   };
-  //   inputInfos.push(savedCard);
-  //   this.setState({
-  //     cardName: '',
-  //     cardDescription: '',
-  //     cardAttr1: '0',
-  //     cardAttr2: '0',
-  //     cardAttr3: '0',
-  //     cardImage: '',
-  //     cardRare: 'normal',
-  //     cardTrunfo: false,
-  //     hasTrunfo: false,
-  //     isSaveButtonDisabled: true,
-  //     inputInfos,
-  //   });
-  // }
-  //
-  // onSaveButtonClick = () => {
-  //   const clearInput = {
-  //     cardName: '',
-  //     cardImage: '',
-  //     cardDescription: '',
-  //     cardAttr1: 0,
-  //     cardAttr2: 0,
-  //     cardAttr3: 0,
-  //     cardRare: '',
-  //   };
-  //   return clearInput;
-  // };
-
-  // onSaveButtonClick.useEffect(() => {
-  //   // const getButton = isSaveButtonDisabled;
-  //   isSaveButtonDisabled.addEventListener('click', () => {
-  //     const clearInput = [];
-  //     return clearInput;
-  //   });
-  // });
 
   render() {
     const { cardName, cardImage, cardDescription,
