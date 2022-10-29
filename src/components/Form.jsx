@@ -107,6 +107,7 @@ class Form extends Component {
           />
         </label>
         <label htmlFor="save-button">
+          Salvar
           <input
             data-testid="save-button"
             id="save-button"
@@ -134,16 +135,5 @@ Form.propTypes = {
   onInputChange: PropTypes.func.isRequired,
   onSaveButtonClick: PropTypes.func.isRequired,
 };
-
-// Form.state.propTypes = {
-//   cardName: PropTypes.string.isRequired,
-//   cardDescription: PropTypes.string.isRequired,
-//   cardAttr1: PropTypes.string.isRequired,
-//   cardAttr2: PropTypes.string.isRequired,
-//   cardAttr3: PropTypes.string.isRequired,
-//   cardImage: PropTypes.string.isRequired,
-//   cardRare: PropTypes.string.isRequired,
-//   onInputChange: PropTypes.func.isRequired,
-// };
 
 export default Form;
