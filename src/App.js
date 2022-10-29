@@ -83,7 +83,20 @@ class App extends React.Component {
       isSaveButtonDisabled: true,
       saveCards,
       onInputChange,
-    });
+    }, (() => {
+      // const verifyTrunfo = this.cardTrunfo === true;
+      this.setState({
+        hasTrunfo: true,
+        // (() => {
+        //   const verifyCard = this.cardTrunfo === false;
+        //   const trunfoFrase = 'Você já tem um Super Trunfo em seu baralho';
+        //   const verifyTrunfo = verifyCard === true
+        //     && trunfoFrase;
+        //   this.setState({
+        //     hasTrunfo: verifyTrunfo,
+        //   });
+      });
+    }));
   };
 
   render() {

@@ -21,6 +21,18 @@ class Card extends Component {
         {
           cardTrunfo && <p data-testid="trunfo-card">Super Trunfo</p>
         }
+        {/* <div data-testid="trunfo-input">
+          {
+            hasTrunfo ? cardTrunfo
+            && <p data-testid="trunfo-card">Super Trunfo</p>
+              : <p>Você já tem um Super Trunfo em seu baralho</p>
+          }
+        </div> */}
+        {/* {
+          hasTrunfo ? cardTrunfo
+          && <p data-testid="trunfo-card">Super Trunfo</p>
+            : <p>Você já tem um Super Trunfo em seu baralho</p>
+        } */}
       </div>
     );
   }
