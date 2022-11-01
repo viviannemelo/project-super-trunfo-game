@@ -1,6 +1,7 @@
 import React from 'react';
 import Form from './components/Form';
 import Card from './components/Card';
+import DeckOfCards from './components/DeckOfCards';
 
 class App extends React.Component {
   state = {
@@ -15,6 +16,7 @@ class App extends React.Component {
     hasTrunfo: false,
     isSaveButtonDisabled: false,
     saveCards: [],
+    deckOfCard: [],
   };
 
   onInputChange = (event) => {
@@ -38,14 +40,14 @@ class App extends React.Component {
       const maxAttr = 90;
       const calcAttr = attr1 + attr2 + attr3 <= maxSum;
       const attrs = attr1 <= maxAttr
-        && attr2 <= maxAttr
-        && attr3 <= maxAttr
-        && attr1 >= 0
-        && attr2 >= 0
-        && attr3 >= 0;
+      && attr2 <= maxAttr
+      && attr3 <= maxAttr
+      && attr1 >= 0
+      && attr2 >= 0
+      && attr3 >= 0;
       const verifyAttr = calcAttr && attrs;
       const verifyPlaces = namePlace && nameDescription
-        && imagePlace && verifyAttr && rarePlace;
+      && imagePlace && verifyAttr && rarePlace;
       this.setState({
         isSaveButtonDisabled: verifyPlaces,
       });
@@ -56,10 +58,10 @@ class App extends React.Component {
     const {
       cardName, cardDescription, cardAttr1, cardAttr2,
       cardAttr3, cardImage, cardRare, saveCards,
-      onInputChange, cardTrunfo, hasTrunfo,
+      onInputChange, cardTrunfo, hasTrunfo, deckOfCard,
     } = this.state;
     const savedCard = {
-      cardName: [cardName],
+      cardName,
       cardDescription,
       cardAttr1,
       cardAttr2,
@@ -68,6 +70,7 @@ class App extends React.Component {
       cardRare,
       cardTrunfo,
       hasTrunfo,
+      deckOfCard,
     };
     saveCards.push(savedCard);
     this.setState({
@@ -83,18 +86,10 @@ class App extends React.Component {
       isSaveButtonDisabled: true,
       saveCards,
       onInputChange,
+      deckOfCard: deckOfCard.concat(savedCard),
     }, (() => {
-      // const verifyTrunfo = this.cardTrunfo === true;
       this.setState({
         hasTrunfo: true,
-        // (() => {
-        //   const verifyCard = this.cardTrunfo === false;
-        //   const trunfoFrase = 'Você já tem um Super Trunfo em seu baralho';
-        //   const verifyTrunfo = verifyCard === true
-        //     && trunfoFrase;
-        //   this.setState({
-        //     hasTrunfo: verifyTrunfo,
-        //   });
       });
     }));
   };
@@ -103,7 +98,8 @@ class App extends React.Component {
     const { cardName, cardImage, cardDescription,
       cardAttr1, cardAttr2, cardAttr3,
       cardRare, cardTrunfo, isSaveButtonDisabled,
-      hasTrunfo } = this.state;
+      hasTrunfo, deckOfCard } = this.state;
+    console.log(deckOfCard);
     return (
       <div className="container">
         <h1>Tryunfo</h1>
@@ -120,6 +116,7 @@ class App extends React.Component {
           hasTrunfo={ hasTrunfo }
           isSaveButtonDisabled={ !isSaveButtonDisabled }
           onSaveButtonClick={ this.onSaveButtonClick }
+          isCardTrunfo={ this.isCardTrunfo }
         />
         <Card
           cardName={ cardName }
@@ -133,6 +130,9 @@ class App extends React.Component {
           hasTrunfo={ hasTrunfo }
           isSaveButtonDisabled={ isSaveButtonDisabled }
           onInputChange={ this.onInputChange }
+        />
+        <DeckOfCards
+          deckOfCard={ deckOfCard }
         />
       </div>
     );
